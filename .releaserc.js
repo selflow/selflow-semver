@@ -12,7 +12,7 @@ const template = readFileSync(path.join(TEMPLATE_DIR, "release-note.hbs"));
 module.exports = {
   branches: [
     {
-      name: "master",
+      name: "main",
       channel: 'beta',
       prerelease: true
     }
