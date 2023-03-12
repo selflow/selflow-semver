@@ -11,7 +11,7 @@ const template = readFileSync(path.join(TEMPLATE_DIR, "release-note.hbs"));
 
 module.exports = {
   branches: [
-    "release-+([0-9])?(.{+([0-9]),x}).x",
+    "release-[0-9]+.[0-9]+.([0-9]+)|x",
     {
       name: "main",
       channel: 'beta',
