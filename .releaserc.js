@@ -1,5 +1,5 @@
 const dateFormat = require("dateformat");
-const { readFileSync } = require("fs");
+const {readFileSync} = require("fs");
 const path = require("path");
 
 const TEMPLATE_DIR = path.join(__dirname, ".github", "templates");
@@ -10,7 +10,13 @@ const TEMPLATE_DIR = path.join(__dirname, ".github", "templates");
 const template = readFileSync(path.join(TEMPLATE_DIR, "release-note.hbs"));
 
 module.exports = {
-  branches: ["master", "main"],
+  branches: [
+    {
+      name: "master",
+      channel: 'beta',
+      prerelease: true
+    }
+  ],
   plugins: [
     [
       "semantic-release-gitmoji",
